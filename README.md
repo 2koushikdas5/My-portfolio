@@ -88,7 +88,7 @@ This script automatically:
 
 ## 🌐 Deploying to GitHub Pages (Step-by-Step)
 
-Follow these quick steps to host your portfolio on `https://2koushikdas5.github.io/My_Portfolio`:
+Follow these quick steps to host your portfolio on `https://2koushikdas5.github.io/My-portfolio`:
 
 ### Step 1: Initialize Git and Link to GitHub
 Open PowerShell inside `C:\Users\KOUSHIK\Desktop\My_Portfolio` and run:
@@ -104,20 +104,20 @@ git commit -m "feat: initial release of cybersecurity portfolio"
 
 # 3. Create a repository named "My_Portfolio" on your GitHub account (https://github.com/new)
 # Then link it:
-git remote add origin https://github.com/2koushikdas5/My_Portfolio.git
+git remote add origin https://github.com/2koushikdas5/My-portfolio.git
 
 # 4. Push to GitHub
 git push -u origin main
 ```
 
 ### Step 2: Enable GitHub Pages
-1. Go to your repository on GitHub: `https://github.com/2koushikdas5/My_Portfolio`
+1. Go to your repository on GitHub: `https://github.com/2koushikdas5/My-portfolio`
 2. Click **Settings** (top navigation).
 3. In the left sidebar, click **Pages**.
 4. Under **Build and deployment > Source**, select **GitHub Actions**.
 5. The `.github/workflows/deploy.yml` workflow will automatically run and publish your site!
 6. Your live portfolio will be accessible at:
-   👉 **`https://2koushikdas5.github.io/My_Portfolio`**
+   👉 **`https://2koushikdas5.github.io/My-portfolio`**
 
 ---
 

@@ -49,7 +49,7 @@ if [ -z "$REMOTE" ]; then
     echo ""
     echo -e "\033[0;33m[!] Notice: No remote 'origin' configured.\033[0m"
     echo -e "    Link your GitHub repository with:"
-    echo -e "    \033[0;36mgit remote add origin https://github.com/2koushikdas5/My_Portfolio.git\033[0m"
+    echo -e "    \033[0;36mgit remote add origin https://github.com/2koushikdas5/My-portfolio.git\033[0m"
     echo -e "    \033[0;36mgit push -u origin main\033[0m"
     echo ""
     exit 0
@@ -64,7 +64,7 @@ git push -u origin "$BRANCH"
 if [ $? -eq 0 ]; then
     echo ""
     echo -e "\033[0;32m[+] SUCCESS: Changes pushed to GitHub!\033[0m"
-    echo -e "    Auto-deploy triggered for: \033[0;36mhttps://2koushikdas5.github.io/My_Portfolio\033[0m"
+    echo -e "    Auto-deploy triggered for: \033[0;36mhttps://2koushikdas5.github.io/My-portfolio\033[0m"
     echo ""
 else
     echo -e "\033[0;31m[!] Push failed. Check your GitHub authentication or permissions.\033[0m"

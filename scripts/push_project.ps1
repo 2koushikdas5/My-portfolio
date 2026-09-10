@@ -57,7 +57,7 @@ if (-not $remote) {
     Write-Host ""
     Write-Host "[!] Notice: No remote 'origin' detected." -ForegroundColor Yellow
     Write-Host "    If you haven't linked your GitHub repository yet, run:" -ForegroundColor White
-    Write-Host "    git remote add origin https://github.com/2koushikdas5/My_Portfolio.git" -ForegroundColor Cyan
+    Write-Host "    git remote add origin https://github.com/2koushikdas5/My-portfolio.git" -ForegroundColor Cyan
     Write-Host "    git push -u origin main" -ForegroundColor Cyan
     Write-Host ""
     Exit 0
@@ -73,7 +73,7 @@ if ($LASTEXITCODE -eq 0) {
     Write-Host ""
     Write-Host "[+] SUCCESS: Changes successfully pushed to GitHub!" -ForegroundColor Green
     Write-Host "    Your portfolio will auto-deploy via GitHub Actions." -ForegroundColor Green
-    Write-Host "    Live site URL: https://2koushikdas5.github.io/My_Portfolio" -ForegroundColor Cyan
+    Write-Host "    Live site URL: https://2koushikdas5.github.io/My-portfolio" -ForegroundColor Cyan
     Write-Host ""
 } else {
     Write-Host ""

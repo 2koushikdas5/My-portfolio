@@ -1,0 +1,63 @@
+name: Auto-Sync & Commit Repositories
+
+on:
+  schedule:
+    # Run once every 24 hours at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync-repos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Portfolio Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch and Cache GitHub Projects Data
+        run: |
+          node -e "
+          const fs = require('fs');
+          const https = require('https');
+
+          const options = {
+            hostname: 'api.github.com',
+            path: '/users/2koushikdas5/repos?sort=updated&per_page=100',
+            headers: { 'User-Agent': 'GitHub-Action-Auto-Sync' }
+          };
+
+          https.get(options, (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => {
+              if (res.statusCode === 200) {
+                if (!fs.existsSync('data')) fs.mkdirSync('data');
+                fs.writeFileSync('data/projects.json', JSON.stringify(JSON.parse(data), null, 2));
+                console.log('Successfully updated data/projects.json');
+              } else {
+                console.warn('API returned code: ' + res.statusCode);
+              }
+            });
+          }).on('error', (e) => console.error(e));
+          "
+
+      - name: Auto-Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No new changes or projects to commit."
+          else
+            git commit -m "chore(auto-sync): update projects metadata [skip ci]"
+            git push origin HEAD
+          fi

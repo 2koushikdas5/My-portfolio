@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyber-dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koushik Das - Cybersecurity Student, Ethical Hacker & Security Researcher Portfolio. Explore projects, security tools, writeups, and skills.">
+    <meta name="keywords" content="Koushik Das, Cybersecurity, Ethical Hacker, PenTesting, SOC Analyst, Network Security, Portfolio">
+    <meta name="author" content="Koushik Das">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Koushik Das | Cybersecurity Portfolio">
+    <meta property="og:description" content="Security Researcher, Ethical Hacker & Cyber Defense Enthusiast.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://2koushikdas5.github.io/My_Portfolio">
+    
+    <title>KOUSHIK DAS // CYBERSECURITY RESEARCHER & ETHICAL HACKER</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="scanline-effect">
+    <!-- Matrix Rain Canvas Background -->
+    <canvas id="matrix-canvas"></canvas>
+    <div class="cyber-grid-overlay"></div>
+
+    <!-- Top Telemetry & Status HUD Bar -->
+    <header class="hud-topbar">
+        <div class="hud-container">
+            <div class="hud-left">
+                <span class="hud-badge pulse"><i class="fa-solid fa-satellite-dish"></i> DEFCON 3</span>
+                <span class="hud-item"><i class="fa-solid fa-shield-halved"></i> SEC-SYS: <strong>ARMED</strong></span>
+                <span class="hud-item hide-mobile"><i class="fa-solid fa-network-wired"></i> PROTOCOL: <strong>TLS 1.3 / SHA-256</strong></span>
+            </div>
+            <div class="hud-center hide-tablet">
+                <span class="hud-terminal-name">USER: <span class="accent-cyan">root@koushik-sec</span></span>
+            </div>
+            <div class="hud-right">
+                <span class="hud-item"><i class="fa-solid fa-clock"></i> <span id="hud-clock">00:00:00 UTC</span></span>
+                <!-- Cyber Audio Switch -->
+                <button id="audio-toggle-btn" class="hud-btn" title="Toggle Cyber Audio FX">
+                    <i class="fa-solid fa-volume-xmark" id="audio-icon"></i>
+                    <span class="hide-mobile">AUDIO</span>
+                </button>
+                <!-- CRT Scanline Switch -->
+                <button id="scanline-toggle-btn" class="hud-btn active" title="Toggle CRT Scanline Effect">
+                    <i class="fa-solid fa-tv"></i>
+                    <span class="hide-mobile">CRT</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="cyber-nav" id="main-nav">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="bracket">[</span><span class="logo-symbol">&lambda;</span><span class="logo-text">KOUSHIK.DAS</span><span class="bracket">]</span>
+                <span class="badge-role">CYBER_SEC</span>
+            </a>
+
+            <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#dossier"><i class="fa-solid fa-id-card-clip"></i> // DOSSIER</a></li>
+                <li><a href="#skills"><i class="fa-solid fa-microchip"></i> // ARSENAL</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-folder-tree"></i> // OPERATIONS</a></li>
+                <li><a href="#terminal-section"><i class="fa-solid fa-terminal"></i> // TERMINAL</a></li>
+                <li><a href="#tools-section"><i class="fa-solid fa-screwdriver-wrench"></i> // LAB_TOOLS</a></li>
+                <li><a href="#certs"><i class="fa-solid fa-certificate"></i> // CREDS</a></li>
+                <li><a href="#contact" class="nav-cta"><i class="fa-solid fa-fingerprint"></i> TRANSMIT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero-section">
+            <div class="cyber-container hero-grid">
+                <div class="hero-content">
+                    <div class="cyber-tagline">
+                        <span class="tag-pulse"></span>
+                        <span>CYBERSECURITY STUDENT & DEFENSIVE / OFFENSIVE SPECIALIST</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="hello-text">IDENT:</span>
+                        <span class="glitch" data-text="KOUSHIK DAS">KOUSHIK DAS</span>
+                    </h1>
+
+                    <div class="typewriter-container">
+                        <span class="prompt-prefix">koushik@security:~$&nbsp;</span>
+                        <span id="typewriter" class="typewriter-text"></span>
+                        <span class="cursor">_</span>
+                    </div>
+
+                    <p class="hero-description">
+                        Dedicated Cybersecurity student specializing in Ethical Hacking, Web Application Pentesting,
+                        Network Defense, and Threat Intelligence. Passionate about uncovering vulnerabilities, hardening system architectures, and engineering automated defense mechanisms.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="cyber-btn cyber-btn-primary">
+                            <span class="btn-scan"></span>
+                            <i class="fa-solid fa-crosshairs"></i> INSPECT PROJECTS
+                        </a>
+                        <a href="#terminal-section" class="cyber-btn cyber-btn-secondary">
+                            <i class="fa-solid fa-terminal"></i> LAUNCH TERMINAL
+                        </a>
+                        <a href="https://github.com/2koushikdas5" target="_blank" rel="noopener noreferrer" class="cyber-btn cyber-btn-ghost">
+                            <i class="fa-brands fa-github"></i> GITHUB: 2koushikdas5
+                        </a>
+                    </div>
+
+                    <!-- Live Stats Ribbon -->
+                    <div class="hero-stats-ribbon">
+                        <div class="stat-card">
+                            <div class="stat-num" id="stat-repos">SYNCING...</div>
+                            <div class="stat-label">GITHUB REPOSITORIES</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">100%</div>
+                            <div class="stat-label">SECURITY FOCUS</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">24/7</div>
+                            <div class="stat-label">THREAT MONITORING</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">ACTIVE</div>
+                            <div class="stat-label">CTF & RESEARCH</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Cyber HUD Graphic -->
+                <div class="hero-visual">
+                    <div class="hud-target-box">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-tr"></div>
+                        <div class="corner corner-bl"></div>
+                        <div class="corner corner-br"></div>
+                        
+                        <div class="avatar-radar-wrapper">
+                            <!-- Radar sweep effect -->
+                            <div class="radar-sweep"></div>
+                            <div class="radar-circle circle-1"></div>
+                            <div class="radar-circle circle-2"></div>
+                            <div class="radar-circle circle-3"></div>
+                            
+                            <!-- Cyber Profile Avatar Graphic -->
+                            <div class="cyber-avatar">
+                                <div class="avatar-glitch-img">
+                                    <i class="fa-solid fa-user-shield avatar-icon"></i>
+                                </div>
+                                <div class="avatar-badge">CLEARANCE LVL-4</div>
+                            </div>
+                        </div>
+
+                        <div class="hud-target-info">
+                            <div class="info-row">
+                                <span class="label">HANDLE:</span>
+                                <span class="val">2koushikdas5</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">STATUS:</span>
+                                <span class="val text-green">ONLINE // READY</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">ENCRYPTION:</span>
+                                <span class="val text-cyan">AES-256-GCM</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">LOCATION:</span>
+                                <span class="val">SYSTEM / NET_SPACE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURITY DOSSIER / ABOUT ME -->
+        <section id="dossier" class="section-padding">
+            <div class="cyber-container">
+                <div class="section-header">
+                    <div class="section-code">// 01_PROFILE_DATA</div>
+                    <h2 class="section-title">SECURITY <span class="text-green">DOSSIER</span></h2>
+                    <p class="section-subtitle">Classified subject personnel briefing and threat assessment capability</p>
+                </div>
+
+                <div class="dossier-grid">
+                    <div class="dossier-card dossier-main">
+                        <div class="card-header">
+                            <i class="fa-solid fa-fingerprint text-green"></i>
+                            <span>BIOGRAPHICAL DATA ARCHIVE</span>
+                            <span class="status-indicator active"></span>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead-text">
+                                Hello! I'm <strong>Koushik Das</strong>, a passionate <strong>Cybersecurity Student</strong> and security enthusiast. 
+                                My primary objective is mastering the intersection of offensive security tactics (Ethical Hacking, Penetration Testing) 
+                                and proactive defense (SOC analysis, network hardening, incident response, SIEM telemetry).
+                            </p>
+                            <p>
+                                I systematically explore attack vectors to understand how adversaries breach defenses, which empowers me to build resilient architectures, identify zero-day vulnerabilities, write custom security automation scripts, and contribute to the cybersecurity community.
+                            </p>
+                            
+                            <div class="dossier-meta-grid">
+                                <div class="meta-item">
+                                    <span class="meta-key"><i class="fa-solid fa-user-astronaut"></i> FULL NAME:</span>
+                                    <span class="meta-val">Koushik Das</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-key"><i class="fa-brands fa-github"></i> GITHUB ALIAS:</span>
+                                    <span class="meta-val"><a href="https://github.com/2koushikdas5" target="_blank" rel="noopener">2koushikdas5</a></span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-key"><i class="fa-solid fa-graduation-cap"></i> SPECIALIZATION:</span>
+                                    <span class="meta-val">Cybersecurity & Ethical Hacking</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-key"><i class="fa-solid fa-shield-virus"></i> FOCUS DOMAINS:</span>
+                                    <span class="meta-val">Web Pentesting, SOC, Network Forensics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Methodology Cards -->
+                    <div class="dossier-pillars">
+                        <div class="pillar-box">
+                            <div class="pillar-icon"><i class="fa-solid fa-skull-crossbones text-red"></i></div>
+                            <div class="pillar-content">
+                                <h3>Offensive Assessment</h3>
+                                <p>Reconnaissance, vulnerability scanning, OWASP Top 10 exploitation, privilege escalation, and proof-of-concept drafting.</p>
+                            </div>
+                        </div>
+                        <div class="pillar-box">
+                            <div class="pillar-icon"><i class="fa-solid fa-shield-halved text-cyan"></i></div>
+                            <div class="pillar-content">
+                                <h3>Defensive Hardening</h3>
+                                <p>Network traffic analysis (Wireshark), firewall configuration, intrusion detection (Snort/Suricata), and log audits.</p>
+                            </div>
+                        </div>
+                        <div class="pillar-box">
+                            <div class="pillar-icon"><i class="fa-solid fa-terminal text-green"></i></div>
+                            <div class="pillar-content">
+                                <h3>Security Automation</h3>
+                                <p>Developing custom Python tools, bash exploit wrappers, packet sniffers, port scanners, and cryptographic utilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS & ARSENAL MATRIX -->
+        <section id="skills" class="section-padding bg-alt">
+            <div class="cyber-container">
+                <div class="section-header">
+                    <div class="section-code">// 02_TACTICAL_ARSENAL</div>
+                    <h2 class="section-title">SKILLS & <span class="text-green">SECURITY STACK</span></h2>
+                    <p class="section-subtitle">Audited toolset, frameworks, protocols, and technical competencies</p>
+                </div>
+
+                <!-- Skill Filter Tabs -->
+                <div class="skill-tabs">
+                    <button class="skill-tab-btn active" data-filter="all">ALL ARSENAL</button>
+                    <button class="skill-tab-btn" data-filter="offensive">OFFENSIVE / PENTEST</button>
+                    <button class="skill-tab-btn" data-filter="defensive">DEFENSIVE / SOC</button>
+                    <button class="skill-tab-btn" data-filter="tools">SECURITY TOOLS</button>
+                    <button class="skill-tab-btn" data-filter="code">SCRIPTING & DEV</button>
+                </div>
+
+                <div class="skills-grid" id="skills-container">
+                    <!-- Offensive Skills -->
+                    <div class="skill-card" data-category="offensive">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-bug-slash skill-icon text-red"></i>
+                            <span class="skill-level">ADVANCED</span>
+                        </div>
+                        <h3 class="skill-title">OWASP Top 10 Web Sec</h3>
+                        <p class="skill-desc">SQL Injection, XSS, CSRF, SSRF, IDOR, and Broken Authentication exploitation & remediation.</p>
+                        <div class="skill-meter"><span style="width: 88%;"></span></div>
+                    </div>
+
+                    <div class="skill-card" data-category="offensive">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-radar skill-icon text-red"></i>
+                            <span class="skill-level">PROFICIENT</span>
+                        </div>
+                        <h3 class="skill-title">Network Penetration</h3>
+                        <p class="skill-desc">Port enumeration, service fingerprinting, banner grabbing, vulnerability scanning, and exploit staging.</p>
+                        <div class="skill-meter"><span style="width: 82%;"></span></div>
+                    </div>
+
+                    <!-- Defensive Skills -->
+                    <div class="skill-card" data-category="defensive">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-network-wired skill-icon text-cyan"></i>
+                            <span class="skill-level">PROFICIENT</span>
+                        </div>
+                        <h3 class="skill-title">Packet & Traffic Analysis</h3>
+                        <p class="skill-desc">Deep inspection of PCAP files, TCP/IP streams, DNS queries, and anomalous packet behavior via Wireshark.</p>
+                        <div class="skill-meter"><span style="width: 85%;"></span></div>
+                    </div>
+
+                    <div class="skill-card" data-category="defensive">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-lock skill-icon text-cyan"></i>
+                            <span class="skill-level">INTERMEDIATE</span>
+                        </div>
+                        <h3 class="skill-title">Linux & System Hardening</h3>
+                        <p class="skill-desc">Configuring iptables/UFW, managing SSH keys, enforcing least privilege, PAM configs, and auditd logs.</p>
+                        <div class="skill-meter"><span style="width: 80%;"></span></div>
+                    </div>
+
+                    <!-- Security Tools -->
+                    <div class="skill-card" data-category="tools">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-crosshairs skill-icon text-green"></i>
+                            <span class="skill-level">MASTERY</span>
+                        </div>
+                        <h3 class="skill-title">Nmap & Recon Suite</h3>
+                        <p class="skill-desc">SYN/UDP stealth scans, NSE script automation, firewall/IDS evasion techniques, and OS detection.</p>
+                        <div class="skill-meter"><span style="width: 92%;"></span></div>
+                    </div>
+
+                    <div class="skill-card" data-category="tools">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-spider skill-icon text-green"></i>
+                            <span class="skill-level">ADVANCED</span>
+                        </div>
+                        <h3 class="skill-title">Burp Suite & Proxies</h3>
+                        <p class="skill-desc">Intercepting HTTP/S traffic, Repeater, Intruder payloads, Decoder, and vulnerability fuzzing.</p>
+                        <div class="skill-meter"><span style="width: 88%;"></span></div>
+                    </div>
+
+                    <div class="skill-card" data-category="tools">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-cubes-stacked skill-icon text-green"></i>
+                            <span class="skill-level">PROFICIENT</span>
+                        </div>
+                        <h3 class="skill-title">Metasploit & ExploitDB</h3>
+                        <p class="skill-desc">Framework navigation, payload generation via msfvenom, meterpreter handling, and post-exploitation.</p>
+                        <div class="skill-meter"><span style="width: 78%;"></span></div>
+                    </div>
+
+                    <div class="skill-card" data-category="tools">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-shield-virus skill-icon text-green"></i>
+                            <span class="skill-level">INTERMEDIATE</span>
+                        </div>
+                        <h3 class="skill-title">SIEM & Threat Telemetry</h3>
+                        <p class="skill-desc">Log ingestion, rule creation, event correlation, and detection alerts using Splunk & Wazuh.</p>
+                        <div class="skill-meter"><span style="width: 75%;"></span></div>
+                    </div>
+
+                    <!-- Programming & Code -->
+                    <div class="skill-card" data-category="code">
+                        <div class="skill-card-top">
+                            <i class="fa-brands fa-python skill-icon text-amber"></i>
+                            <span class="skill-level">ADVANCED</span>
+                        </div>
+                        <h3 class="skill-title">Python for Security</h3>
+                        <p class="skill-desc">Developing custom socket scanners, exploit scripts, Scapy packet manipulation, and web scrapers.</p>
+                        <div class="skill-meter"><span style="width: 90%;"></span></div>
+                    </div>
+
+                    <div class="skill-card" data-category="code">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-terminal skill-icon text-amber"></i>
+                            <span class="skill-level">PROFICIENT</span>
+                        </div>
+                        <h3 class="skill-title">Bash & Shell Automation</h3>
+                        <p class="skill-desc">Automating reconnaissance pipelines, cron auditing scripts, process monitoring, and log parsing.</p>
+                        <div class="skill-meter"><span style="width: 85%;"></span></div>
+                    </div>
+
+                    <div class="skill-card" data-category="code">
+                        <div class="skill-card-top">
+                            <i class="fa-brands fa-js skill-icon text-amber"></i>
+                            <span class="skill-level">INTERMEDIATE</span>
+                        </div>
+                        <h3 class="skill-title">JavaScript & Web Tech</h3>
+                        <p class="skill-desc">DOM manipulation, analysis of client-side XSS attack chains, CSP bypassing, and web APIs.</p>
+                        <div class="skill-meter"><span style="width: 80%;"></span></div>
+                    </div>
+
+                    <div class="skill-card" data-category="code">
+                        <div class="skill-card-top">
+                            <i class="fa-solid fa-key skill-icon text-amber"></i>
+                            <span class="skill-level">PROFICIENT</span>
+                        </div>
+                        <h3 class="skill-title">Cryptography & Hashing</h3>
+                        <p class="skill-desc">Symmetric/Asymmetric encryption (AES, RSA), Hashing (SHA-256, MD5), PKI, TLS/SSL, and Salts.</p>
+                        <div class="skill-meter"><span style="width: 84%;"></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS & OPERATIONS (AUTO GITHUB SYNC ENGINE) -->
+        <section id="projects" class="section-padding">
+            <div class="cyber-container">
+                <div class="section-header">
+                    <div class="section-code">// 03_CLASSIFIED_OPERATIONS</div>
+                    <h2 class="section-title">SECURITY <span class="text-green">PROJECTS & LABS</span></h2>
+                    <p class="section-subtitle">
+                        Featuring Curated Cybersecurity Research & <span class="text-cyan">Live Auto-Synced Repositories</span> from GitHub ID: <code>2koushikdas5</code>
+                    </p>
+                </div>
+
+                <!-- GitHub Live Sync Notification Bar -->
+                <div class="github-sync-banner">
+                    <div class="sync-status">
+                        <span class="sync-dot live"></span>
+                        <span>LIVE GITHUB SYNC ENGINE: <strong>ACTIVE</strong></span>
+                    </div>
+                    <div class="sync-account">
+                        <i class="fa-brands fa-github"></i> TARGET: <a href="https://github.com/2koushikdas5" target="_blank" rel="noopener">github.com/2koushikdas5</a>
+                    </div>
+                    <button id="refresh-repos-btn" class="sync-refresh-btn" title="Force check GitHub API for new pushes">
+                        <i class="fa-solid fa-arrows-rotate"></i> RE-SYNC REPOS
+                    </button>
+                </div>
+
+                <!-- Live Repos Container (Auto-populated via GitHub REST API) -->
+                <div id="github-repos-container" class="projects-grid">
+                    <div class="repo-loading-card">
+                        <div class="loading-spinner"></div>
+                        <p>Establishing encrypted socket to GitHub API...</p>
+                    </div>
+                </div>
+
+                <!-- Featured Cybersecurity Projects Showcase (Always Available) -->
+                <div class="curated-section-divider">
+                    <span>// FEATURED CORE CYBERSECURITY REPOSITORY LABS</span>
+                </div>
+
+                <div class="projects-grid curated-projects">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-banner banner-red">
+                            <span class="sec-badge"><i class="fa-solid fa-shield-cat"></i> DEFENSE LAB</span>
+                            <span class="vuln-severity critical">HIGH RISK</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">NetSentry: Automated Network Intrusion & Packet Sniffer</h3>
+                            <p class="project-desc">
+                                A high-speed packet analyzer developed in Python utilizing Scapy. Detects SYN floods, ARP spoofing attacks, and malicious port scans in real time, writing forensic PCAP logs and triggering sound alarms.
+                            </p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Scapy</span>
+                                <span>Network Security</span>
+                                <span>IDS</span>
+                                <span>Socket</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/2koushikdas5" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> Repository</a>
+                                <button class="proj-action-btn" onclick="CyberTerminal.quickExec('project netsentry')"><i class="fa-solid fa-terminal"></i> Terminal Info</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-banner banner-cyan">
+                            <span class="sec-badge"><i class="fa-solid fa-bug"></i> OFFENSIVE TOOL</span>
+                            <span class="vuln-severity medium">VULN LAB</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">VulnHunter: OWASP Top 10 Web Vulnerability Scanner</h3>
+                            <p class="project-desc">
+                                An automated CLI penetration testing tool that crawls web applications, tests for SQL Injection (Boolean & Time-based), reflected XSS endpoints, exposed git directories, and insecure HTTP security headers.
+                            </p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Web Pentest</span>
+                                <span>OWASP</span>
+                                <span>Automation</span>
+                                <span>Bash</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/2koushikdas5" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> Repository</a>
+                                <button class="proj-action-btn" onclick="CyberTerminal.quickExec('project vulnhunter')"><i class="fa-solid fa-terminal"></i> Terminal Info</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-banner banner-green">
+                            <span class="sec-badge"><i class="fa-solid fa-lock"></i> CRYPTOGRAPHY</span>
+                            <span class="vuln-severity low">SECURE LAB</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">CryptoVault: AES-256 Multi-Layer File Encryption Suite</h3>
+                            <p class="project-desc">
+                                Zero-knowledge command-line & GUI file encryption program implementing AES-256 in GCM mode with PBKDF2 key derivation (100,000 rounds) and SHA-256 checksum integrity verification.
+                            </p>
+                            <div class="project-tags">
+                                <span>Cryptography</span>
+                                <span>AES-256</span>
+                                <span>PBKDF2</span>
+                                <span>Python</span>
+                                <span>CLI</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/2koushikdas5" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> Repository</a>
+                                <button class="proj-action-btn" onclick="CyberTerminal.quickExec('project cryptovault')"><i class="fa-solid fa-terminal"></i> Terminal Info</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-banner banner-purple">
+                            <span class="sec-badge"><i class="fa-solid fa-user-secret"></i> FORENSICS</span>
+                            <span class="vuln-severity medium">THREAT INTEL</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Malware Behavior Analysis & Memory Dump Extractor</h3>
+                            <p class="project-desc">
+                                Sandbox forensic environment pipeline created to inspect PE headers, parse strings, compute fuzzy SSDEEP hashes, and extract volatility artifacts from compromised virtual machine memory dumps.
+                            </p>
+                            <div class="project-tags">
+                                <span>Forensics</span>
+                                <span>Volatility</span>
+                                <span>Memory Analysis</span>
+                                <span>YARA</span>
+                                <span>Linux</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com/2koushikdas5" target="_blank" class="proj-link"><i class="fa-brands fa-github"></i> Repository</a>
+                                <button class="proj-action-btn" onclick="CyberTerminal.quickExec('project forensics')"><i class="fa-solid fa-terminal"></i> Terminal Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auto-Commit Instruction Card -->
+                <div class="auto-push-guide">
+                    <div class="guide-header">
+                        <i class="fa-solid fa-code-commit text-green"></i>
+                        <span>HOW AUTO-COMMIT & INSTANT PROJECT PUBLISHING WORKS</span>
+                    </div>
+                    <div class="guide-content">
+                        <div class="guide-step">
+                            <div class="step-num">1</div>
+                            <div class="step-info">
+                                <h4>Create or Push Any Repo on GitHub</h4>
+                                <p>Push any new security tool or lab to <code>github.com/2koushikdas5/&lt;repo-name&gt;</code>.</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="step-num">2</div>
+                            <div class="step-info">
+                                <h4>Instant Dynamic Client Sync</h4>
+                                <p>This portfolio queries GitHub's REST API directly. New repos will automatically appear right here without modifying a single line of code!</p>
+                            </div>
+                        </div>
+                        <div class="guide-step">
+                            <div class="step-num">3</div>
+                            <div class="step-info">
+                                <h4>One-Click Push Automation</h4>
+                                <p>Use the provided <code>./scripts/push_project.ps1</code> or GitHub Actions workflow to auto-commit and sync changes instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE CYBER TERMINAL -->
+        <section id="terminal-section" class="section-padding bg-alt">
+            <div class="cyber-container">
+                <div class="section-header">
+                    <div class="section-code">// 04_COMMAND_SHELL</div>
+                    <h2 class="section-title">INTERACTIVE <span class="text-green">CYBER TERMINAL</span></h2>
+                    <p class="section-subtitle">Execute commands, probe security records, and uncover Easter eggs</p>
+                </div>
+
+                <div class="terminal-wrapper">
+                    <div class="terminal-titlebar">
+                        <div class="titlebar-buttons">
+                            <span class="btn-dot dot-red" title="Close"></span>
+                            <span class="btn-dot dot-yellow" title="Minimize"></span>
+                            <span class="btn-dot dot-green" title="Maximize"></span>
+                        </div>
+                        <div class="titlebar-title">
+                            <i class="fa-solid fa-terminal"></i> bash - koushik@cyber-sec-node: ~ (tty1)
+                        </div>
+                        <div class="titlebar-actions">
+                            <button id="terminal-clear-btn" class="terminal-action-btn" title="Clear console"><i class="fa-solid fa-trash-can"></i> CLEAR</button>
+                            <button id="terminal-help-btn" class="terminal-action-btn" title="Show commands"><i class="fa-solid fa-circle-question"></i> HELP</button>
+                        </div>
+                    </div>
+
+                    <div class="terminal-body" id="terminal-output" onclick="document.getElementById('terminal-input').focus()">
+                        <div class="terminal-banner">
+                            <pre class="ascii-art">
+   ______     __               ____             __                  
+  / ____/_  __/ /_  ___  _____/ __ \____  _____/ /_____  ____  _____
+ / /   / / / / __ \/ _ \/ ___/ /_/ / __ \/ ___/ //_/ _ \/ __ \/ ___/
+/ /___/ /_/ / /_/ /  __/ /  / ____/ /_/ / /  / ,&lt; /  __/ /_/ / /    
+\____/\__, /_.___/\___/_/  /_/    \____/_/  /_/|_|\___/\____/_/     
+     /____/       [ KOUSHIK DAS - CYBER DEFENSE TERMINAL v2.5 ]      
+                            </pre>
+                            <p class="terminal-welcome">Type <span class="cmd-highlight">help</span> to view available operations, or try <span class="cmd-highlight">whoami</span>, <span class="cmd-highlight">skills</span>, <span class="cmd-highlight">projects</span>, <span class="cmd-highlight">nmap</span>, or <span class="cmd-highlight">cat flag.txt</span>.</p>
+                        </div>
+                    </div>
+
+                    <div class="terminal-prompt-line">
+                        <span class="prompt-user">koushik@sec-node</span>:<span class="prompt-path">~</span>$&nbsp;
+                        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Enter cyber command..." aria-label="Terminal command input">
+                    </div>
+                </div>
+
+                <!-- Quick Terminal Buttons -->
+                <div class="terminal-shortcuts">
+                    <span>QUICK COMMANDS:</span>
+                    <button class="cmd-btn" onclick="CyberTerminal.quickExec('help')">help</button>
+                    <button class="cmd-btn" onclick="CyberTerminal.quickExec('whoami')">whoami</button>
+                    <button class="cmd-btn" onclick="CyberTerminal.quickExec('skills')">skills</button>
+                    <button class="cmd-btn" onclick="CyberTerminal.quickExec('projects')">projects</button>
+                    <button class="cmd-btn" onclick="CyberTerminal.quickExec('nmap')">nmap</button>
+                    <button class="cmd-btn" onclick="CyberTerminal.quickExec('cat flag.txt')">cat flag.txt</button>
+                    <button class="cmd-btn" onclick="CyberTerminal.quickExec('matrix')">matrix</button>
+                    <button class="cmd-btn" onclick="CyberTerminal.quickExec('clear')">clear</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE SECURITY TOOLS & CRYPTO PLAYGROUND -->
+        <section id="tools-section" class="section-padding">
+            <div class="cyber-container">
+                <div class="section-header">
+                    <div class="section-code">// 05_UTILITIES</div>
+                    <h2 class="section-title">CYBER <span class="text-green">TOOLS PLAYGROUND</span></h2>
+                    <p class="section-subtitle">Live in-browser cryptographic & encoding tools built for quick analysis</p>
+                </div>
+
+                <div class="crypto-tools-grid">
+                    <!-- Base64 & Hex Encoder / Decoder -->
+                    <div class="tool-box">
+                        <div class="tool-header">
+                            <i class="fa-solid fa-code-compare text-cyan"></i>
+                            <h3>Base64 / Hex Transformer</h3>
+                        </div>
+                        <div class="tool-body">
+                            <div class="input-group">
+                                <label for="tool-input-text">INPUT RAW STRING:</label>
+                                <textarea id="tool-input-text" rows="3" placeholder="Enter string to encode/decode...">CyberSecurity_2026_Koushik</textarea>
+                            </div>
+                            <div class="tool-actions-row">
+                                <button class="tool-btn" id="btn-b64-encode"><i class="fa-solid fa-lock"></i> Base64 Encode</button>
+                                <button class="tool-btn" id="btn-b64-decode"><i class="fa-solid fa-lock-open"></i> Base64 Decode</button>
+                                <button class="tool-btn" id="btn-hex-encode"><i class="fa-solid fa-hashtag"></i> To Hex</button>
+                                <button class="tool-btn" id="btn-hex-decode"><i class="fa-solid fa-font"></i> From Hex</button>
+                            </div>
+                            <div class="input-group">
+                                <label for="tool-output-text">TRANSFORMED OUTPUT:</label>
+                                <textarea id="tool-output-text" rows="3" readonly placeholder="Output will appear here..."></textarea>
+                            </div>
+                            <button class="copy-btn" id="btn-copy-transform"><i class="fa-regular fa-copy"></i> Copy Output</button>
+                        </div>
+                    </div>
+
+                    <!-- Hash Generator & Password Strength -->
+                    <div class="tool-box">
+                        <div class="tool-header">
+                            <i class="fa-solid fa-fingerprint text-green"></i>
+                            <h3>SHA-256 Hash & Entropy Checker</h3>
+                        </div>
+                        <div class="tool-body">
+                            <div class="input-group">
+                                <label for="hash-input-text">ENTER TEXT / SECRET:</label>
+                                <input type="text" id="hash-input-text" value="SecurePassword!2026" placeholder="Type text to calculate SHA-256...">
+                            </div>
+                            <div class="entropy-bar-wrapper">
+                                <div class="entropy-label-row">
+                                    <span>PASSWORD ENTROPY / STRENGTH:</span>
+                                    <span id="entropy-score" class="text-green">STRONG</span>
+                                </div>
+                                <div class="entropy-track"><span id="entropy-fill" style="width: 85%;"></span></div>
+                            </div>
+                            <div class="input-group">
+                                <label>COMPUTED SHA-256 HASH (Web Crypto API):</label>
+                                <div class="hash-result-box" id="hash-result">
+                                    Generating hash...
+                                </div>
+                            </div>
+                            <button class="copy-btn" id="btn-copy-hash"><i class="fa-regular fa-copy"></i> Copy Hash</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS & CTF ACHIEVEMENTS -->
+        <section id="certs" class="section-padding bg-alt">
+            <div class="cyber-container">
+                <div class="section-header">
+                    <div class="section-code">// 06_CREDENTIALS</div>
+                    <h2 class="section-title">CERTIFICATIONS & <span class="text-green">CTF METRICS</span></h2>
+                    <p class="section-subtitle">Verified accreditations, defensive credentials, and competitive security stats</p>
+                </div>
+
+                <div class="certs-grid">
+                    <!-- Cert 1 -->
+                    <div class="cert-card">
+                        <div class="cert-icon-wrapper">
+                            <i class="fa-solid fa-shield-virus cert-main-icon"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">SECURITY ACCREDITATION</span>
+                            <h3 class="cert-title">CompTIA Security+ (Sy0-701)</h3>
+                            <p class="cert-desc">Core baseline security skills, risk mitigation, cryptography, network access control, and incident response architecture.</p>
+                            <span class="cert-status verified"><i class="fa-solid fa-circle-check"></i> IN PROGRESS / TARGET</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="cert-card">
+                        <div class="cert-icon-wrapper">
+                            <i class="fa-solid fa-user-ninja cert-main-icon text-cyan"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">OFFENSIVE PRACTICAL</span>
+                            <h3 class="cert-title">Certified Ethical Hacker (CEH)</h3>
+                            <p class="cert-desc">Hands-on penetration testing methodologies, foot-printing, enumeration, system hacking, malware threats, and evasion.</p>
+                            <span class="cert-status verified"><i class="fa-solid fa-circle-check"></i> ACTIVE STUDY PATH</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="cert-card">
+                        <div class="cert-icon-wrapper">
+                            <i class="fa-brands fa-google cert-main-icon text-amber"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">GOOGLE CLOUD / CYBER</span>
+                            <h3 class="cert-title">Google Cybersecurity Professional</h3>
+                            <p class="cert-desc">Hands-on SIEM monitoring, SQL log extraction, Python security automation, network protocols, and risk frameworks.</p>
+                            <span class="cert-status completed"><i class="fa-solid fa-award"></i> CERTIFIED</span>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4 -->
+                    <div class="cert-card">
+                        <div class="cert-icon-wrapper">
+                            <i class="fa-solid fa-flag cert-main-icon text-red"></i>
+                        </div>
+                        <div class="cert-info">
+                            <span class="cert-issuer">TRYHACKME & HACK THE BOX</span>
+                            <h3 class="cert-title">CTF & Practical Lab Challenges</h3>
+                            <p class="cert-desc">Active participant solving Linux privilege escalation, Web exploitation rooms, Active Directory labs, and Forensics challenges.</p>
+                            <span class="cert-status live"><i class="fa-solid fa-bolt"></i> CONTINUOUS LABBING</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & ENCRYPTED TRANSMISSION -->
+        <section id="contact" class="section-padding">
+            <div class="cyber-container">
+                <div class="section-header">
+                    <div class="section-code">// 07_COMMS_SOCKET</div>
+                    <h2 class="section-title">TRANSMIT <span class="text-green">ENCRYPTED MESSAGE</span></h2>
+                    <p class="section-subtitle">Initiate secure contact handshake, collaboration inquiry, or bug bounty alert</p>
+                </div>
+
+                <div class="contact-layout">
+                    <div class="contact-info-panel">
+                        <div class="panel-header">
+                            <i class="fa-solid fa-tower-broadcast text-green"></i>
+                            <span>COMMUNICATION HANDSHAKE</span>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                I am always open to discussing cybersecurity opportunities, vulnerability research collaborations, ethical hacking initiatives, or student internships.
+                            </p>
+
+                            <div class="comm-channel">
+                                <div class="channel-icon"><i class="fa-brands fa-github text-green"></i></div>
+                                <div class="channel-details">
+                                    <span class="label">GITHUB PROFILE:</span>
+                                    <a href="https://github.com/2koushikdas5" target="_blank" rel="noopener">github.com/2koushikdas5</a>
+                                </div>
+                            </div>
+
+                            <div class="comm-channel">
+                                <div class="channel-icon"><i class="fa-solid fa-envelope text-cyan"></i></div>
+                                <div class="channel-details">
+                                    <span class="label">SECURE TRANSMISSION EMAIL:</span>
+                                    <a href="mailto:koushikdas.cybersec@gmail.com">koushikdas.cybersec@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="comm-channel">
+                                <div class="channel-icon"><i class="fa-brands fa-linkedin text-amber"></i></div>
+                                <div class="channel-details">
+                                    <span class="label">LINKEDIN:</span>
+                                    <a href="https://linkedin.com" target="_blank" rel="noopener">linkedin.com/in/koushik-das</a>
+                                </div>
+                            </div>
+
+                            <div class="pgp-box">
+                                <div class="pgp-header">
+                                    <i class="fa-solid fa-key"></i> PUBLIC PGP KEY FINGERPRINT
+                                </div>
+                                <code class="pgp-key">
+                                    9B4F 3A21 C78E D012 449A<br>
+                                    55BC 10F8 62A3 2K9D 2026
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-panel">
+                        <form id="cyber-contact-form" class="cyber-form" onsubmit="event.preventDefault(); CyberTerminal.handleContactSubmit();">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sender-name"><i class="fa-solid fa-user-secret"></i> OPERATOR NAME / CALLSIGN</label>
+                                    <input type="text" id="sender-name" required placeholder="e.g. Agent Smith / Recruiter">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sender-email"><i class="fa-solid fa-at"></i> RETURN COMM ADDRESS (EMAIL)</label>
+                                    <input type="email" id="sender-email" required placeholder="operator@domain.com">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sender-subject"><i class="fa-solid fa-crosshairs"></i> SUBJECT PROTOCOL</label>
+                                <input type="text" id="sender-subject" required placeholder="Security Project / Internship / Inquiry">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sender-message"><i class="fa-solid fa-comment-dots"></i> PAYLOAD / TRANSMISSION BODY</label>
+                                <textarea id="sender-message" rows="5" required placeholder="Enter transmission message contents..."></textarea>
+                            </div>
+
+                            <div class="form-bottom">
+                                <div class="encryption-toggle">
+                                    <input type="checkbox" id="encrypt-payload" checked>
+                                    <label for="encrypt-payload"><i class="fa-solid fa-lock text-green"></i> Enable Client-Side Simulation Encryption</label>
+                                </div>
+                                <button type="submit" class="cyber-btn cyber-btn-primary" id="btn-submit-contact">
+                                    <span class="btn-scan"></span>
+                                    <i class="fa-solid fa-paper-plane"></i> TRANSMIT PAYLOAD
+                                </button>
+                            </div>
+                            <div id="contact-feedback" class="form-feedback"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="cyber-footer">
+        <div class="cyber-container footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <span class="bracket">[</span><span class="logo-symbol">&lambda;</span><span class="logo-text">KOUSHIK.DAS</span><span class="bracket">]</span>
+                </div>
+                <p class="footer-copy">
+                    &copy; <span id="current-year">2026</span> Koushik Das. All systems operational. Built with security-first principles.
+                </p>
+            </div>
+            
+            <div class="footer-center">
+                <div class="footer-telemetry">
+                    <span>STATUS: <span class="text-green">ONLINE</span></span>
+                    <span>UPTIME: <span id="uptime-counter">0d 0h 0m 0s</span></span>
+                    <span>HASH: <span class="text-cyan">8f14b2...c91e</span></span>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="https://github.com/2koushikdas5" target="_blank" rel="noopener" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:koushikdas.cybersec@gmail.com" aria-label="Send Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#hero" aria-label="Back to Top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/crypto-tools.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
